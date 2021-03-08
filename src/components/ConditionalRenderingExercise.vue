@@ -10,7 +10,7 @@
             screen.
           </p>
           <!-- add code to element below -->
-          <div class="player-card text-center">
+          <div class="player-card text-center" v-show="true == true">
             <div>
               <img :src="state.player.photo" />
             </div>
@@ -38,7 +38,7 @@
             toggle the value to true to get it to show up again.
           </p>
           <!-- add code to element below -->
-          <div class="player-card text-center">
+          <div class="player-card text-center" v-if="state.player.showPlayer">
             <div>
               <img :src="state.player.photo" />
             </div>
@@ -67,23 +67,23 @@
             to add another condition.
           </p>
           <!-- v-if comparing grade and 90 -->
-          <div>
+          <div v-if="state.player.grade >= 90 && state.player.grade <= 100">
             <p>The grade is 'A'.</p>
           </div>
           <!-- v-else-if comparing grade and 80 -->
-          <div>
+          <div v-else-if="state.player.grade >= 80 && state.player.grade <= 89">
             <p>The grade is 'B'.</p>
           </div>
           <!-- v-else-if comparing grade and 70 -->
-          <div>
+          <div v-else-if="state.player.grade >= 70 && state.player.grade <= 79">
             <p>The grade is 'C'.</p>
           </div>
           <!-- v-else-if comparing grade and 60 -->
-          <div>
+          <div v-else-if="state.player.grade >= 60 && state.player.grade <= 69">
             <p>The grade is 'D'.</p>
           </div>
           <!-- v-else to display if all the others fail -->
-          <div>
+          <div v-else-if="state.player.grade >= 0 && state.player.grade <= 59">
             <p>The grade is 'F'.</p>
           </div>
         </div>
@@ -135,6 +135,9 @@ export default {
         name: "D$",
         position: "WR",
         number: 4,
+        showPlayer: true,
+        grade: 73,
+        id: true
       },
     });
     return {

@@ -11,6 +11,7 @@ export default {
   components: { Navbar },
 };
 </script>
+
 <style lang="scss">
 body{
   background: #f8f8f8;
